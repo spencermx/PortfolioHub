@@ -15,10 +15,10 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "spencermaas.com",
-  description: "spencermaas.com",
+  title: "Spencer Maas | Software Engineer Portfolio",
+  description: "Explore Spencer Maas's portfolio showcasing expertise in Next.js, React, and full-stack development through 60+ deployed web applications, featuring static site generation, server-side rendering, and WebAssembly projects.",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 
