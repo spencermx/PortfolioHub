@@ -5,20 +5,90 @@
 /* Import Flowbite CSS */
 @import 'flowbite';
 
-/* Use only this */
+/* Import custom font (e.g., Inter for a modern, tech-inspired look) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+/* Custom variables for dark mode and cyberpunk theme */
 html.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --neon-purple: #a855f7; /* Purple accent for hover and highlights */
+  --neon-teal: #14b8a6; /* Teal accent for links and buttons */
+  --gradient-purple-teal: linear-gradient(to right, var(--neon-purple), var(--neon-teal));
+  --transition-duration: 300ms; /* For smooth hover effects */
 }
 
+/* Body styles */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  line-height: 1.6; /* Improved readability */
 }
 
+/* Background pattern with opacity using pseudo-element */
+.bg-pattern {
+  position: relative;
+  z-index: 0;
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/circuit-pattern.png');
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Arch watermark for footer */
+.arch-watermark {
+  opacity: 0.1;
+  background-image: url('/arch-watermark.png');
+  background-size: contain;
+  background-position: center;
+}
+
+/* Custom utilities layer */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .neon-hover {
+    transition: color var(--transition-duration) ease, background-color var(--transition-duration) ease;
+  }
+
+  .neon-hover:hover {
+    color: var(--neon-purple);
+  }
+
+  .gradient-purple-teal {
+    background-image: var(--gradient-purple-teal);
+  }
+
+  .neon-shadow {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5); /* Purple glow for cards on hover */
+    transition: box-shadow var(--transition-duration) ease;
+  }
+
+  .neon-shadow:hover {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  }
+}
+
+/* Responsive adjustments (optional for better mobile experience) */
+@media (max-width: 768px) {
+  .text-7xl {
+    font-size: 3rem; /* Scale down hero title on mobile */
+  }
+
+  .my-24 {
+    margin-top: 4rem; /* Reduce section spacing on mobile */
+    margin-bottom: 4rem;
   }
 }

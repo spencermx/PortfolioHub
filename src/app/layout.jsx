@@ -16,7 +16,8 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Spencer Maas | Software Engineer Portfolio",
-  description: "Explore Spencer Maas's portfolio showcasing expertise in Next.js, React, and full-stack development through 60+ deployed web applications, featuring static site generation, server-side rendering, and WebAssembly projects.",
+  description:
+    "Explore Spencer Maas's portfolio showcasing expertise in Next.js, React, and full-stack development through 60+ deployed web applications, featuring static site generation, server-side rendering, and WebAssembly projects.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -28,7 +29,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
         {children}
         <Script src="/flowbite.min.js" strategy="beforeInteractive" />
       </body>
